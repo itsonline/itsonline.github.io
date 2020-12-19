@@ -10,6 +10,7 @@
 <body>
     <br/>
     <div class="container">
+        <a href="/penulisanberita/tambahpenulisanberita"> + Tambah Penulisan Berita Baru</a>
 	<br/>
 	<br/>
 
@@ -29,12 +30,14 @@
 			<td>{{ $pb->IDPenulisan }}</td>
             <td>{{ $pb->kodeStaf }}</td>
             <td>{{ $pb->tugas }}</td>
-			<td>{{ $pb->kodeberita }}</td>
+			<td>{{ $pb->kodeBerita }}</td>
             <td>{{ $pb->namaAgenda }}</td>
             <td>{{ $pb->tglAgenda }}</td>
             <td>{{ $pb->waktuAgenda }}</td>
 			<td>
-				<a href="/penulisanberita/editpenuulisanberita/{{ $pb->IDPenulisan }}">Edit</a>
+                <a href="/penulisanberita/editpenulisanberita/{{ $pb->IDPenulisan }}">Edit</a>
+                |
+				<a href="/penulisanberita/hapus/{{ $pb->IDPenulisan }}">Hapus</a>
 			</td>
 		</tr>
         @endforeach

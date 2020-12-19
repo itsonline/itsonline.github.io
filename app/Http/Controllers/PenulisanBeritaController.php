@@ -14,7 +14,7 @@ class PenulisanBeritaController extends Controller
         $penulisanberita = DB::table('penulisan')
         ->join('berita','penulisan.kodeBerita','berita.kodeBerita')
         ->join('staf','penulisan.kodeStaf','staf.kodeStaf')
-        ->select('staf.*','berita.namaAgenda','staf.tugas','berita.tglAgenda', 'berita.waktuAgenda',)
+        ->select('penulisan.*','berita.namaAgenda','staf.tugas','berita.tglAgenda', 'berita.waktuAgenda',)
         ->get();
 
     	// mengirim data inventarisbarang ke view index
@@ -23,47 +23,65 @@ class PenulisanBeritaController extends Controller
     }
 
     // method untuk menampilkan view form tambah pegawai
-    public function tambahinventaris()
+    public function tambahpenulisanberita()
     {
 
         // memanggil view tambah
-        return view('tambahinventaris');
+        return view('tambahpenulisanberita');
 
     }
     // method untuk insert data ke table pegawai
-    public function storeinventaris(Request $request)
+    public function storepenulisanberita(Request $request)
     {
         // insert data ke table pegawai
-        DB::table('inventarisbarang')->insert([
-            'kodePinjam' => $request->kodePinjam,
+        DB::table('penulisan')
+        ->join('berita','penulisan.kodeBerita','berita.kodeBerita')
+        ->join('staf','penulisan.kodeStaf','staf.kodeStaf')
+        ->insert([
+            'IDPenulisan' => $request->IDPenulisan,
             'kodeStaf' => $request->kodeStaf,
-            'kodeBarang' => $request->kodeBarang,
-            'jenisBarang' => $request->jenisBarang,
-            'tglPinjam' => $request->tglPinjam,
-            'statusPeminjaman' => $request->statusPeminjaman,
-            'tglKembali' => $request->tglKembali
+            'kodeBerita' => $request->kodeBerita,
         ]);
         // alihkan halaman ke halaman pegawai
-        return redirect('/inventarisbarang');
+        return redirect('/penulisanberita');
 
     }
     // method untuk edit data pegawai
-    public function editinventaris($id)
+    public function editpenulisanberita($id)
     {
         // mengambil data pegawai berdasarkan id yang dipilih
-        $inventarisbarang = DB::table('inventarisbarang')->where('kodePinjam',$id)->get();
+        $penulisanberita = DB::table('penulisan')
+        ->join('berita','penulisan.kodeBerita','berita.kodeBerita')
+        ->join('staf','penulisan.kodeStaf','staf.kodeStaf')
+        ->where('IDPenulisan',$id)->get();
         // passing data pegawai yang didapat ke view edit.blade.php
-        return view('editinventaris',['inventarisbarang' => $inventarisbarang]);
+        return view('editpenulisanberita',['penulisanberita' => $penulisanberita]);
     }
     // update data pegawai
-    public function updateinventaris(Request $request)
+    public function updatepenulisanberita(Request $request)
     {
         // update data pegawai
-        DB::table('inventarisbarang')->where('kodePinjam',$request->id)->update([
-            'statusPeminjaman' => $request->statusPeminjaman,
-            'tglKembali' => $request->tglKembali
+        DB::table('penulisan')
+        ->join('berita','penulisan.kodeBerita','berita.kodeBerita')
+        ->join('staf','penulisan.kodeStaf','staf.kodeStaf')
+        ->where('IDPenulisan',$request->id)->update([
+            'IDPenulisan' => $request->IDPenulisan,
+            'kodeStaf' => $request->kodeStaf,
+            'kodeBerita' => $request->kodeBerita,
         ]);
         // alihkan halaman ke halaman pegawai
-        return redirect('/inventarisbarang');
+        return redirect('/penulisanberita');
+    }
+    // method untuk hapus data pegawai
+    public function hapuspenulisanberita($id)
+    {
+        // menghapus data pegawai berdasarkan id yang dipilih
+        DB::table('penulisan')
+        ->join('berita','penulisan.kodeBerita','berita.kodeBerita')
+        ->join('staf','penulisan.kodeStaf','staf.kodeStaf')
+        ->where('IDPenulisan',$id)->delete();
+
+        // alihkan halaman ke halaman pegawai
+        return redirect('/penulisanberita');
     }
 }
