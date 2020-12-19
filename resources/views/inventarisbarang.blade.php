@@ -10,7 +10,7 @@
 <body>
     <br/>
     <div class="container">
-        <a href="/inventarisbarang/tambahinventaris" style="font-size:20px"> + Tambah Pegawai Baru</a>
+        <a href="/inventarisbarang/tambahinventaris" style="font-size:20px"> + Tambah Data Baru</a>
 	<br/>
 	<br/>
 
