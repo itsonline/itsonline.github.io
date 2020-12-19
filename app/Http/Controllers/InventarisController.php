@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\DB;
 class InventarisController extends Controller
 {
     //
-    public function index()
+    public function inventaris()
     {
     	// mengambil data dari table inventarisbarang
     	$inventarisbarang = DB::table('inventarisbarang')->get();
 
     	// mengirim data inventarisbarang ke view index
-    	return view('index',['inventarisbarang' => $inventarisbarang]);
+    	return view('inventarisbarang',['inventarisbarang' => $inventarisbarang]);
 
     }
 
@@ -27,7 +27,7 @@ class InventarisController extends Controller
 
     }
     // method untuk insert data ke table pegawai
-    public function store(Request $request)
+    public function storeinventaris(Request $request)
     {
         // insert data ke table pegawai
         DB::table('inventarisbarang')->insert([
@@ -46,10 +46,20 @@ class InventarisController extends Controller
     // method untuk edit data pegawai
     public function editinventaris($id)
     {
-        // mengambil data inventarisbarang berdasarkan id yang dipilih
+        // mengambil data pegawai berdasarkan id yang dipilih
         $inventarisbarang = DB::table('inventarisbarang')->where('kodePinjam',$id)->get();
-        // passing data inventarisbarang yang didapat ke view edit.blade.php
-        return view('edit',['inventarisbarang' => $inventarisbarang]);
-
+        // passing data pegawai yang didapat ke view edit.blade.php
+        return view('editinventaris',['inventarisbarang' => $inventarisbarang]);
+    }
+    // update data pegawai
+    public function updateinventaris(Request $request)
+    {
+        // update data pegawai
+        DB::table('inventarisbarang')->where('kodePinjam',$request->id)->update([
+            'statusPeminjaman' => $request->statusPeminjaman,
+            'tglKembali' => $request->tglKembali
+        ]);
+        // alihkan halaman ke halaman pegawai
+        return redirect('/inventarisbarang');
     }
 }

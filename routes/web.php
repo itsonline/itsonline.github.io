@@ -16,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/inventarisbarang','InventarisController@index');
+Route::get('/inventarisbarang','InventarisController@inventaris');
 
 Route::get('/inventarisbarang/tambahinventaris','InventarisController@tambahinventaris');
 
-Route::post('/inventarisbarang/store','InventarisController@store');
+Route::post('/inventarisbarang/store','InventarisController@storeinventaris');
 
 Route::get('/inventarisbarang/editinventaris/{id}','InventarisController@editinventaris');
+
+Route::post('/inventarisbarang/updateinventaris','InventarisController@updateinventaris');
+
+
