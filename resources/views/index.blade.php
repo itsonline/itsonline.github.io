@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Berita ITS Online</title>
+    <title>Inventaris Barang ITS Online</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -10,32 +10,32 @@
 <body>
     <br/>
     <div class="container">
-        <a href="/berita/tambah" style="font-size:20px"> + Tambah Pegawai Baru</a>
+        <a href="/inventarisbarang/tambahinventaris" style="font-size:20px"> + Tambah Pegawai Baru</a>
 	<br/>
 	<br/>
 
 	<table class="table table-hover">
         <thead>
 		<tr>
-			<th>Kode Berita</th>
-			<th>Nama Agenda</th>
-			<th>Tanggal Agenda</th>
-			<th>Waktu Agenda</th>
-            <th>Deadline</th>
-            <th>Status</th>
+			<th>Kode Pinjam</th>
+			<th>Kode Staf</th>
+			<th>Kode Barang</th>
+			<th>Jenis Barang</th>
+            <th>Tanggal Pinjam</th>
+            <th>Status Peminjaman</th>
+            <th>Tanggal Kembali</th>
 		</tr>
-		@foreach($berita as $b)
+		@foreach($inventarisbarang as $ib)
 		<tr>
-			<td>{{ $b->kodeBerita }}</td>
-			<td>{{ $b->namaAgenda }}</td>
-			<td>{{ $b->tglAgenda }}</td>
-            <td>{{ $b->waktuAgenda }}</td>
-            <td>{{ $b->deadline }}</td>
-            <td>{{ $b->status }}</td>
+			<td>{{ $ib->kodePinjam }}</td>
+            <td>{{ $ib->kodeStaf }}</td>
+            <td>{{ $ib->kodeBarang }}</td>
+			<td>{{ $ib->jenisBarang }}</td>
+            <td>{{ $ib->tglPinjam }}</td>
+            <td>{{ $ib->statusPeminjaman }}</td>
+            <td>{{ $ib->tglKembali }}</td>
 			<td>
-				<a href="/berita/edit/{{ $b->kodeBerita }}">Edit</a>
-				|
-				<a href="/berita/hapus/{{ $b->kodeBerita }}">Hapus</a>
+				<a href="/inventarisbarang/editinventaris/{{ $ib->kodePinjam }}">Edit</a>
 			</td>
 		</tr>
         @endforeach
