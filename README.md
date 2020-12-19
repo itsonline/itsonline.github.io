@@ -1,2 +1,2 @@
 # itsonline.github.io
-ini tugas sbd
+ini tugas sbd [semangat all, btr lagi kelar :)]
