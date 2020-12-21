@@ -264,7 +264,7 @@
                 </div>
 
                 <div class="nav__list">
-                    <a href="/datastaf" class="nav__link">
+                    <a href="/datastaf" class="nav__link active">
                         <i class='bx bx-user nav__icon' ></i>
                         <span class="nav__name">Data Staf</span>
                     </a>
@@ -274,7 +274,7 @@
                         <span class="nav__name">Daftar Berita</span>
                     </a>
 
-                    <a href="/beritapublish" class="nav__link active">
+                    <a href="/beritapublish" class="nav__link">
                         <i class='bx bx-grid-alt nav__icon' ></i>
                         <span class="nav__name">Berita Publish</span>
                     </a>
@@ -328,6 +328,7 @@
 			<td>{{ $ds->depStaf }}</td>
             <td>{{ $ds->jabatan }}</td>
             <td>{{ $ds->tugas }}</td>
+            <td>{{ $ds->tglLahir }}</td>
             <td>{{ $ds->noHP }}</td>
             <td>{{ $ds->email }}</td>
 			<td>

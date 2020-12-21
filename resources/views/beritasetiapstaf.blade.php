@@ -274,12 +274,12 @@
                         <span class="nav__name">Daftar Berita</span>
                     </a>
 
-                    <a href="/beritapublish" class="nav__link active">
+                    <a href="/beritapublish" class="nav__link">
                         <i class='bx bx-grid-alt nav__icon' ></i>
                         <span class="nav__name">Berita Publish</span>
                     </a>
 
-                    <a href="/beritasetiapstaf" class="nav__link">
+                    <a href="/beritasetiapstaf" class="nav__link active">
                         <i class='bx bx-box nav__icon' ></i>
                         <span class="nav__name">Berita Setiap Staf</span>
                     </a>

@@ -324,8 +324,6 @@
 			<td>{{ $bp->link }}</td>
 			<td>
                 <a href="beritapublish/editberitapublish/{{ $bp->kodeBerita }}">Edit</a>
-                |
-                <a href="beritapublish/hapus/{{ $bp->kodeBerita }}">Hapus</a>
 			</td>
 		</tr>
         @endforeach

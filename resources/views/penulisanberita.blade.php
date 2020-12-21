@@ -274,7 +274,7 @@
                         <span class="nav__name">Daftar Berita</span>
                     </a>
 
-                    <a href="/beritapublish" class="nav__link active">
+                    <a href="/beritapublish" class="nav__link">
                         <i class='bx bx-grid-alt nav__icon' ></i>
                         <span class="nav__name">Berita Publish</span>
                     </a>
@@ -284,7 +284,7 @@
                         <span class="nav__name">Berita Setiap Staf</span>
                     </a>
 
-                    <a href="/penulisanberita" class="nav__link">
+                    <a href="/penulisanberita" class="nav__link active">
                         <i class='bx bx-pen nav__icon' ></i>
                         <span class="nav__name">Penulisan Berita</span>
                     </a>

@@ -44,5 +44,4 @@ Route::post('/penulisanberita/updatepenulisanberita','PenulisanBeritaController@
 Route::post('/beritapublish/updateberitapublish','BeritaPublishController@updateberitapublish');
 
 Route::get('/penulisanberita/hapus/{id}','PenulisanBeritaController@hapuspenulisanberita');
-Route::get('/beritapublish/hapus/{id}','BeritaPublishController@hapusberitapublish');
 

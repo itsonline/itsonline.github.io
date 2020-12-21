@@ -15,7 +15,9 @@ class PenulisanBeritaController extends Controller
         ->join('berita','penulisan.kodeBerita','berita.kodeBerita')
         ->join('staf','penulisan.kodeStaf','staf.kodeStaf')
         ->select('penulisan.*','berita.namaAgenda','staf.tugas','berita.tglAgenda', 'berita.waktuAgenda',)
+        ->orderBy('IDPenulisan')
         ->get();
+
 
     	// mengirim data inventarisbarang ke view index
     	return view('penulisanberita',['penulisanberita' => $penulisanberita]);
@@ -51,8 +53,6 @@ class PenulisanBeritaController extends Controller
     {
         // mengambil data pegawai berdasarkan id yang dipilih
         $penulisanberita = DB::table('penulisan')
-        ->join('berita','penulisan.kodeBerita','berita.kodeBerita')
-        ->join('staf','penulisan.kodeStaf','staf.kodeStaf')
         ->where('IDPenulisan',$id)->get();
         // passing data pegawai yang didapat ke view edit.blade.php
         return view('editpenulisanberita',['penulisanberita' => $penulisanberita]);
@@ -62,12 +62,21 @@ class PenulisanBeritaController extends Controller
     {
         // update data pegawai
         DB::table('penulisan')
-        ->join('berita','penulisan.kodeBerita','berita.kodeBerita')
-        ->join('staf','penulisan.kodeStaf','staf.kodeStaf')
         ->where('IDPenulisan',$request->id)->update([
             'IDPenulisan' => $request->IDPenulisan,
             'kodeStaf' => $request->kodeStaf,
             'kodeBerita' => $request->kodeBerita,
+        ]);
+        DB::table('hasilberitastaf')
+        ->where('IDHasilBeritaStaf',$request->id)->update([
+            'KodeStaf' => $request->kodeStaf,
+            'KodeBerita' => $request->kodeBerita,
+
+        ]);
+        DB::table('honorberitastaf')
+        ->where('kodeStaf',$request->id)->update([
+            'KodeStaf' => $request->kodeStaf,
+
         ]);
         // alihkan halaman ke halaman pegawai
         return redirect('/penulisanberita');

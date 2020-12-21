@@ -64,14 +64,4 @@ class BeritaPublishController extends Controller
         // alihkan halaman ke halaman pegawai
         return redirect('/beritapublish');
     }
-    // method untuk hapus data pegawai
-    public function hapusberitapublish($id)
-    {
-        // menghapus data pegawai berdasarkan id yang dipilih
-        DB::table('detailberita')
-        ->where('kodeBerita',$id)->delete();
-
-        // alihkan halaman ke halaman pegawai
-        return redirect('/beritapublish');
-    }
 }

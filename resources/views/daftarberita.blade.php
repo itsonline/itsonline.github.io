@@ -269,12 +269,12 @@
                         <span class="nav__name">Data Staf</span>
                     </a>
 
-                    <a href="/daftarberita" class="nav__link">
+                    <a href="/daftarberita" class="nav__link active">
                         <i class='bx bx-folder nav__icon' ></i>
                         <span class="nav__name">Daftar Berita</span>
                     </a>
 
-                    <a href="/beritapublish" class="nav__link active">
+                    <a href="/beritapublish" class="nav__link">
                         <i class='bx bx-grid-alt nav__icon' ></i>
                         <span class="nav__name">Berita Publish</span>
                     </a>
@@ -326,6 +326,7 @@
 			<td>{{ $db->waktuAgenda }}</td>
             <td>{{ $db->deadline }}</td>
             <td>{{ $db->status }}</td>
+            <td>{{ $db->narsum }}</td>
 			<td>
 				<a href="/daftarberita/editdaftarberita/{{ $db->kodeBerita }}">Edit</a>
 			</td>
