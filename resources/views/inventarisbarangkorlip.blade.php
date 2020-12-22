@@ -264,32 +264,32 @@
                 </div>
 
                 <div class="nav__list">
-                    <a href="/datastaf" class="nav__link">
+                    <a href="/datastafkorlip" class="nav__link">
                         <i class='bx bx-user nav__icon' ></i>
                         <span class="nav__name">Data Staf</span>
                     </a>
 
-                    <a href="/daftarberita" class="nav__link">
+                    <a href="/daftarberitakorlip" class="nav__link">
                         <i class='bx bx-folder nav__icon' ></i>
                         <span class="nav__name">Daftar Berita</span>
                     </a>
 
-                    <a href="/beritapublish" class="nav__link">
+                    <a href="/beritapublishkorlip" class="nav__link">
                         <i class='bx bx-grid-alt nav__icon' ></i>
                         <span class="nav__name">Berita Publish</span>
                     </a>
 
-                    <a href="/beritasetiapstaf" class="nav__link">
+                    <a href="/beritasetiapstafkorlip" class="nav__link">
                         <i class='bx bx-box nav__icon' ></i>
                         <span class="nav__name">Berita Setiap Staf</span>
                     </a>
 
-                    <a href="/penulisanberita" class="nav__link">
+                    <a href="/penulisanberitakorlip" class="nav__link">
                         <i class='bx bx-pen nav__icon' ></i>
                         <span class="nav__name">Penulisan Berita</span>
                     </a>
 
-                    <a href="inventarisbarang" class="nav__link active">
+                    <a href="inventarisbarangkorlip" class="nav__link active">
                         <i class='bx bx-camera nav__icon' ></i>
                         <span class="nav__name">Inventaris Barang</span>
                     </a>
@@ -304,7 +304,7 @@
     </div>
     <br/>
     <div class="container">
-        <a href="/inventarisbarang/tambahinventaris" style="font-size:20px"> + Tambah Peminjaman Baru</a>
+        <a href="/inventarisbarangkorlip/tambahinventariskorlip" style="font-size:20px"> + Tambah Peminjaman Baru</a>
 	<br/>
 	<br/>
 
@@ -329,7 +329,7 @@
             <td>{{ $ib->statusPeminjaman }}</td>
             <td>{{ $ib->tglKembali }}</td>
 			<td>
-				<a href="/inventarisbarang/editinventaris/{{ $ib->kodePinjam }}">Edit</a>
+				<a href="/inventarisbarangkorlip/editinventariskorlip/{{ $ib->kodePinjam }}">Edit</a>
 			</td>
 		</tr>
         @endforeach

@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Inventaris Barang ITS Online</title>
+    <title>BeritaPublish ITS Online</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -264,32 +264,32 @@
                 </div>
 
                 <div class="nav__list">
-                    <a href="/datastaf" class="nav__link">
+                    <a href="/datastafpemred" class="nav__link">
                         <i class='bx bx-user nav__icon' ></i>
                         <span class="nav__name">Data Staf</span>
                     </a>
 
-                    <a href="/daftarberita" class="nav__link">
+                    <a href="/daftarberitapemred" class="nav__link">
                         <i class='bx bx-folder nav__icon' ></i>
                         <span class="nav__name">Daftar Berita</span>
                     </a>
 
-                    <a href="/beritapublish" class="nav__link">
+                    <a href="/beritapublishpemred" class="nav__link active">
                         <i class='bx bx-grid-alt nav__icon' ></i>
                         <span class="nav__name">Berita Publish</span>
                     </a>
 
-                    <a href="/beritasetiapstaf" class="nav__link">
+                    <a href="/beritasetiapstafpemred" class="nav__link">
                         <i class='bx bx-box nav__icon' ></i>
                         <span class="nav__name">Berita Setiap Staf</span>
                     </a>
 
-                    <a href="/penulisanberita" class="nav__link">
+                    <a href="/penulisanberitapemred" class="nav__link">
                         <i class='bx bx-pen nav__icon' ></i>
                         <span class="nav__name">Penulisan Berita</span>
                     </a>
 
-                    <a href="inventarisbarang" class="nav__link active">
+                    <a href="inventarisbarangpemred" class="nav__link">
                         <i class='bx bx-camera nav__icon' ></i>
                         <span class="nav__name">Inventaris Barang</span>
                     </a>
@@ -304,32 +304,26 @@
     </div>
     <br/>
     <div class="container">
-        <a href="/inventarisbarang/tambahinventaris" style="font-size:20px"> + Tambah Peminjaman Baru</a>
+        <a href="beritapublishpemred/tambahberitapublishpemred/" style="font-size:20px"> + Tambah Berita Publish Baru</a>
 	<br/>
 	<br/>
 
 	<table class="table table-hover">
         <thead>
 		<tr>
-			<th>Kode Pinjam</th>
-			<th>Kode Staf</th>
-			<th>Kode Barang</th>
-			<th>Jenis Barang</th>
-            <th>Tanggal Pinjam</th>
-            <th>Status Peminjaman</th>
-            <th>Tanggal Kembali</th>
+			<th>Kode Berita</th>
+			<th>Judul Berita</th>
+			<th>Tanggal Publish</th>
+			<th>Link Berita</th>
 		</tr>
-		@foreach($inventarisbarang as $ib)
+		@foreach($beritapublish as $bp)
 		<tr>
-			<td>{{ $ib->kodePinjam }}</td>
-            <td>{{ $ib->kodeStaf }}</td>
-            <td>{{ $ib->kodeBarang }}</td>
-			<td>{{ $ib->jenisBarang }}</td>
-            <td>{{ $ib->tglPinjam }}</td>
-            <td>{{ $ib->statusPeminjaman }}</td>
-            <td>{{ $ib->tglKembali }}</td>
+			<td>{{ $bp->kodeBerita }}</td>
+            <td>{{ $bp->judulBerita }}</td>
+            <td>{{ $bp->tglPublish }}</td>
+			<td>{{ $bp->link }}</td>
 			<td>
-				<a href="/inventarisbarang/editinventaris/{{ $ib->kodePinjam }}">Edit</a>
+                <a href="beritapublishpemred/editberitapublishpemred/{{ $bp->kodeBerita }}">Edit</a>
 			</td>
 		</tr>
         @endforeach

@@ -1,68 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        #particles-js{
-            background-color: #d9e4f5;
-background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
-            width: 100%;
-            height: 100vh;
-        }
-        body{ /*skals*/
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            min-height: 100vh;
-        }
-        .quiz-container{
-            position: absolute;
-            border-radius: 8px;
-            overflow: hidden;
-            max-width: 100%;
-        }
-
-
-    </style>
-</head>
-<body>
-    <div class="quiz-container" id="quiz">
-        <div class="container content">
-            <div class="row">
-              <div class="col-sm">
-                <div class="jumbotron jumbotron-fluid" style="background: none;">
-                    <div class="container">
-                      <h1 class="display-4">ITS Online</h1>
-                      <p class="lead">Welcome to ITS Online's database, please sign in according to your role:</p>
-                      <ul>
-                        <li><a class= "list-product" href="/datastaf">Reporter</a></li>
-                        <li><a class= "list-product" href="/datastafredaktur">Redaktur</a></li>
-                        <li><a class= "list-product" href="/datastafkorlip">Koordinator Liputan</a></li>
-                        <li><a class= "list-product" href="/datastafpemred">Pemimpin Redaktur</a></li>
-                        <li><a class= "list-product" href="/datastafpemred">Sekretaris</a></li>
-                        <li><a class= "list-product" href="/datastafpemred">Bendahara</a></li>
-                      </ul>
-                    </div>
-                  </div>
-              </div>
-              <div class="col-sm">
-                <img src="svg\undraw_typewriter_i8xd.svg" class="img-fluid" alt="Responsive image">
-            </div>
-          </div>
-    </div>
-      </div>
-    <div id ="particles-js"></div>
-    <script>
-      /* -----------------------------------------------
+/* -----------------------------------------------
 /* Author : Vincent Garreau  - vincentgarreau.com
 /* MIT license: http://opensource.org/licenses/MIT
 /* Demo / Generator : vincentgarreau.com/particles.js
@@ -221,9 +157,9 @@ var pJS = function(tag_id, params){
   pJS.fn.retinaInit = function(){
 
     if(pJS.retina_detect && window.devicePixelRatio > 1){
-      pJS.canvas.pxratio = window.devicePixelRatio;
+      pJS.canvas.pxratio = window.devicePixelRatio; 
       pJS.tmp.retina = true;
-    }
+    } 
     else{
       pJS.canvas.pxratio = 1;
       pJS.tmp.retina = false;
@@ -427,7 +363,7 @@ var pJS = function(tag_id, params){
     this.vx_i = this.vx;
     this.vy_i = this.vy;
 
-
+    
 
     /* if shape is image */
 
@@ -456,7 +392,7 @@ var pJS = function(tag_id, params){
       }
     }
 
-
+    
 
   };
 
@@ -466,7 +402,7 @@ var pJS = function(tag_id, params){
     var p = this;
 
     if(p.radius_bubble != undefined){
-      var radius = p.radius_bubble;
+      var radius = p.radius_bubble; 
     }else{
       var radius = p.radius;
     }
@@ -555,9 +491,9 @@ var pJS = function(tag_id, params){
       pJS.canvas.ctx.lineWidth = pJS.particles.shape.stroke.width;
       pJS.canvas.ctx.stroke();
     }
-
+    
     pJS.canvas.ctx.fill();
-
+    
   };
 
 
@@ -728,7 +664,7 @@ var pJS = function(tag_id, params){
     pJS.tmp.count_svg = 0;
     pJS.fn.particlesEmpty();
     pJS.fn.canvasClear();
-
+    
     /* restart */
     pJS.fn.vendors.start();
 
@@ -748,14 +684,14 @@ var pJS = function(tag_id, params){
 
       var opacity_line = pJS.particles.line_linked.opacity - (dist / (1/pJS.particles.line_linked.opacity)) / pJS.particles.line_linked.distance;
 
-      if(opacity_line > 0){
-
+      if(opacity_line > 0){        
+        
         /* style */
         var color_line = pJS.particles.line_linked.color_rgb_line;
         pJS.canvas.ctx.strokeStyle = 'rgba('+color_line.r+','+color_line.g+','+color_line.b+','+opacity_line+')';
         pJS.canvas.ctx.lineWidth = pJS.particles.line_linked.width;
         //pJS.canvas.ctx.lineCap = 'round'; /* performance issue */
-
+        
         /* path */
         pJS.canvas.ctx.beginPath();
         pJS.canvas.ctx.moveTo(p1.x, p1.y);
@@ -789,7 +725,7 @@ var pJS = function(tag_id, params){
       p2.vy += ay;
 
     }
-
+    
 
   }
 
@@ -869,7 +805,7 @@ var pJS = function(tag_id, params){
       if(dist_mouse <= pJS.interactivity.modes.bubble.distance){
 
         if(ratio >= 0 && pJS.interactivity.status == 'mousemove'){
-
+          
           /* size */
           if(pJS.interactivity.modes.bubble.size != pJS.particles.size.value){
 
@@ -918,7 +854,7 @@ var pJS = function(tag_id, params){
       if(pJS.interactivity.status == 'mouseleave'){
         init();
       }
-
+    
     }
 
     /* on click event */
@@ -997,7 +933,7 @@ var pJS = function(tag_id, params){
           repulseRadius = pJS.interactivity.modes.repulse.distance,
           velocity = 100,
           repulseFactor = clamp((1/repulseRadius)*(-1*Math.pow(dist_mouse/repulseRadius,2)+1)*repulseRadius*velocity, 0, 50);
-
+      
       var pos = {
         x: p.x + normVec.x * repulseFactor,
         y: p.y + normVec.y * repulseFactor
@@ -1010,7 +946,7 @@ var pJS = function(tag_id, params){
         p.x = pos.x;
         p.y = pos.y;
       }
-
+    
     }
 
 
@@ -1065,7 +1001,7 @@ var pJS = function(tag_id, params){
         // }else{
         //   process();
         // }
-
+        
 
       }else{
 
@@ -1073,7 +1009,7 @@ var pJS = function(tag_id, params){
 
           p.vx = p.vx_i;
           p.vy = p.vy_i;
-
+        
         }
 
       }
@@ -1103,7 +1039,7 @@ var pJS = function(tag_id, params){
           pJS.canvas.ctx.strokeStyle = 'rgba('+color_line.r+','+color_line.g+','+color_line.b+','+opacity_line+')';
           pJS.canvas.ctx.lineWidth = pJS.particles.line_linked.width;
           //pJS.canvas.ctx.lineCap = 'round'; /* performance issue */
-
+          
           /* path */
           pJS.canvas.ctx.beginPath();
           pJS.canvas.ctx.moveTo(p.x, p.y);
@@ -1219,7 +1155,7 @@ var pJS = function(tag_id, params){
         }
 
       });
-
+        
     }
 
 
@@ -1423,7 +1359,7 @@ var pJS = function(tag_id, params){
           pJS.fn.vendors.init();
           pJS.fn.vendors.draw();
         }
-
+        
       }
 
     }else{
@@ -1470,7 +1406,7 @@ var pJS = function(tag_id, params){
   pJS.fn.vendors.eventsListeners();
 
   pJS.fn.vendors.start();
-
+  
 
 
 };
@@ -1603,141 +1539,3 @@ window.particlesJS.load = function(tag_id, path_config_json, callback){
   xhr.send();
 
 };
-    </script>
-    <script>
-      /* -----------------------------------------------
-/* How to use? : Check the GitHub README
-/* ----------------------------------------------- */
-
-/* To load a config file (particles.json) you need to host this demo (MAMP/WAMP/local)... */
-/*
-particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('particles.js loaded - callback');
-});
-*/
-
-/* Otherwise just put the config content (json): */
-
-particlesJS('particles-js',
-
-{
-  "particles": {
-    "number": {
-      "value": 80,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 5,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 6,
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "repulse"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true,
-  "config_demo": {
-    "hide_card": false,
-    "background_color": "#b61924",
-    "background_image": "",
-    "background_position": "50% 50%",
-    "background_repeat": "no-repeat",
-    "background_size": "cover"
-  }
-}
-
-);
-    </script>
-</body>
-</html>
